@@ -89,6 +89,13 @@ const memeConstraints = (req, res, next) => {
   return next();
 }
 
+// Servi React build
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
+
 app.use(session({
   secret: 'Sentence used to sign the session ID cookie',
   resave: false,
