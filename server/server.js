@@ -89,14 +89,6 @@ const memeConstraints = (req, res, next) => {
   return next();
 }
 
-const path = require('path');
-
-// Servi React build
-app.use(express.static(path.join(__dirname, '../client/build')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-});
 
 app.use(session({
   secret: 'Sentence used to sign the session ID cookie',
@@ -167,7 +159,14 @@ app.delete('/api/sessions/current', (req, res) => {
   res.end();
 });
 
+const path = require('path');
 
+// Servi React build
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
 // activate the server
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
