@@ -89,6 +89,8 @@ const memeConstraints = (req, res, next) => {
   return next();
 }
 
+const path = require('path');
+
 // Servi React build
 app.use(express.static(path.join(__dirname, '../client/build')));
 
