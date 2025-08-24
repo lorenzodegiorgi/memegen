@@ -29,7 +29,7 @@ function NavigationBar(props) {
                             </Nav>
                         </Navbar.Collapse>
                     </>
-                    : <Link className="navbar-icons navbarDropMenu" to={{pathname: '/login'}}>Login</Link>}
+                    : <Link className="navbar-icons navbarDropMenu" to={{pathname: '/create'}}>Create</Link>}
             </Container>
         </Navbar>
     )

@@ -114,7 +114,7 @@ app.get('/api/memes', (req, res) => {
 
 })
 
-app.post('/api/meme/add', isAuthenticated, memeConstraints, (req, res) => {
+app.post('/api/meme/add', memeConstraints, (req, res) => {
   dao.addMeme(req.body.meme)
     .then((meme) => { res.json(meme) })
     .catch((error) => { res.status(500).json(error) });

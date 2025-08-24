@@ -141,7 +141,7 @@ function App() {
                   <> {loggedIn ? <Redirect to="/" /> : <LoginForm doLogIn={doLogIn}></LoginForm>}</>
                 </Route>
                 <Route path="/create">
-                {loggedIn ? <MemeGeneration addOrCopy={addMeme}/>:<Redirect to="/" />}
+               <MemeGeneration addOrCopy={addMeme}/>
                 </Route>
                 <Route path="/" render={() =>
                       <React.Fragment>

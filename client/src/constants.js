@@ -28,7 +28,6 @@ export const COLOR = [
 
 export const VISIBILITY = [
     'public',
-    'protected',
 ]
 
 export const DATE_FORMAT = "dd DD MMM YYYY";

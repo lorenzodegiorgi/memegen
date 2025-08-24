@@ -24,6 +24,7 @@ function MemeGeneration(props) {
     const [visibility, setVisibility] = useState(location.state ? location.state.selectedMeme.visibility : DEFAULTMEME.visibility);
     const [date, setDate] = useState(dayjs().format('DD-MM-YYYY'));
     const [submitted, setSubmitted] = useState(false);
+    const [creator, setCreator] = useState('');
     const userInfo = useContext(UserContext);
 
 
@@ -74,7 +75,7 @@ function MemeGeneration(props) {
             title: title,
             background: background,
             visibility: visibility,
-            creator: userInfo.username,
+            creator: creator,
             font: font,
             color: color,
             date: date,
@@ -116,6 +117,10 @@ function MemeGeneration(props) {
                             <FormGroup>
                                 <Form.Label>Title</Form.Label>
                                 <Form.Control type="text" value={title} onChange={(event) => setTitle(event.target.value)} />
+                            </FormGroup>
+                             <FormGroup>
+                                <Form.Label>Creator</Form.Label>
+                                <Form.Control type="text" value={creator} onChange={(event) => setCreator(event.target.value)} />
                             </FormGroup>
                             <FormGroup>
                                 <Form.Label>Background</Form.Label>
